@@ -221,6 +221,41 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   # Dump fingerprints
   script.Print("Target: {}".format(target_info.fingerprint))
 
+  android_version = target_info.GetBuildProp("ro.build.version.release")
+  build_id = target_info.GetBuildProp("ro.build.id")
+  build_date = target_info.GetBuildProp("ro.build.date")
+  security_patch = target_info.GetBuildProp("ro.build.version.security_patch")
+  device = target_info.GetBuildProp("ro.product.device")
+
+  script.Print("=================================================");
+  script.Print("");
+  script.Print("                       .                ")
+  script.Print("                  .o$*°    .o*   d      ")
+  script.Print("              .o$$$$     o$P    d$      ")
+  script.Print("            o$*dP$$P    d**$o.  $b d    ")
+  script.Print("          d$° $Pd$$b  °?$$$$*°*$$$d$    ")
+  script.Print("         $P  dP $$°$   d$$$ d$o.$$?$ob  ")
+  script.Print("        d$   db.$b  $. d$$$bd$***$$$$$  ")
+  script.Print("        $P   ?$$ °$. ?$$°$$$$$bo. *$$$b ")
+  script.Print("        ?b   d*$.  *oo$°?o$b°?.*$$o?$$$ ")
+  script.Print("         $.o*  °$b  d$o   *$o $*o?b$ $  ")
+  script.Print("          $b     °$dP  ?    $**b ? $?   ")
+  script.Print("           *$o   o*°$.      ?b P°?b bb  ")
+  script.Print("             °$od°   ?b      $    $?$   ")
+  script.Print("               °?o    P      *    P $   ")
+  script.Print("                 °$.         P      d   ")
+  script.Print("                   ?                    ")
+  script.Print("");
+  script.Print("                    Kenvyra");
+  script.Print("");
+  script.Print("=================================================");
+  script.Print(" Android version  : %s"%(android_version));
+  script.Print(" Build id         : %s"%(build_id));
+  script.Print(" Build date       : %s"%(build_date));
+  script.Print(" Security patch   : %s"%(security_patch));
+  script.Print(" Device           : %s"%(device));
+  script.Print("=================================================");
+
   device_specific.FullOTA_InstallBegin()
 
   CopyInstallTools(output_zip)
