@@ -398,7 +398,7 @@ PRODUCT_PACKAGES_DEBUG := \
     unwind_reg_info \
     unwind_symbols \
 
-ifeq ($(LINEAGE_BUILD),)
+ifeq ($(KENVYRA_BUILD),)
 PRODUCT_PACKAGES_DEBUG += \
     su
 endif
