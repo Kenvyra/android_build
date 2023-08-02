@@ -1198,7 +1198,7 @@ def GetCodenameToApiLevelMap(input_tf_zip):
   if codenames is None:
     raise ValueError("No ro.build.version.all_codenames in SYSTEM/build.prop")
 
-  result = {}
+  result = {"S": 31}
   for codename in codenames:
     codename = codename.strip()
     if codename:
